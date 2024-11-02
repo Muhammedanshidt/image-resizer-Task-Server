@@ -6,7 +6,15 @@ const sharp = require("sharp");
 const path = require("path");
 const fs = require('fs');
 const port = 3001;
-app.use(cors());
+
+// app.use(cors()); init 
+
+app.use(
+  cors({
+    origin: 'https://image-resizer-task-client.vercel.app/', 
+    credentials: true, 
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 
